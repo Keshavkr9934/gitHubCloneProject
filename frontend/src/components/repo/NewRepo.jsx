@@ -23,7 +23,7 @@ const NewRepo = () => {
     setUserId(userId);
     const fetchUsername = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/userProfile/${userId}`);
+        const response = await fetch(`https://githubclonebackend.onrender.com/userProfile/${userId}`);
         const data = await response.json();
         setOwner(data.username);
       } catch (error) {
@@ -37,7 +37,7 @@ const NewRepo = () => {
   const fetchRepository = async () => {
     
     try {
-      const resposne = await axios.post(`http://localhost:3000/create/Repo`,{
+      const resposne = await axios.post(`https://githubclonebackend.onrender.com/create/Repo`,{
         name: repoName,
         description: description,
         content: content,

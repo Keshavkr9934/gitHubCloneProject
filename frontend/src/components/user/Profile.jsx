@@ -16,7 +16,7 @@ const Profile = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/userProfile/${userId}`,
+          `https://githubclonebackend.onrender.com/userProfile/${userId}`,
           {}
         );
         setUser(response.data.username);
@@ -30,7 +30,7 @@ const Profile = () => {
     const fetchrefo = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/repo/user/${userId}`
+          `https://githubclonebackend.onrender.com/repo/user/${userId}`
         );
         const data = await response.json();
         // setRepositorie(data.repository);

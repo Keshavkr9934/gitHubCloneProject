@@ -16,7 +16,7 @@ const Dashboard = () => {
     const fetchRepositories = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/repo/user/${userId}`
+          `https://githubclonebackend.onrender.com/repo/user/${userId}`
         );
         const data = await response.json();
         // console.log(data);
@@ -36,7 +36,7 @@ const Dashboard = () => {
     };
     const fetchSuggestedRepositories = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/repo/all`);
+        const response = await fetch(`https://githubclonebackend.onrender.com/repo/all`);
         const data = await response.json();
         // setSuggestedRepositories(data);
         if(data.length === 0){

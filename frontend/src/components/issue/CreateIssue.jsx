@@ -15,7 +15,7 @@ const CreateIssue = () => {
         const userId=localStorage.getItem('userId');
         setUserId(userId);
         const userName= async () => {
-            const response = await fetch(`http://localhost:3000/userProfile/${userId}`);
+            const response = await fetch(`https://githubclonebackend.onrender.com/userProfile/${userId}`);
             const data = await response.json();
             const name= data.username;
             setUser(name[0]);
@@ -25,7 +25,7 @@ const CreateIssue = () => {
     const submitedIssues= async (e) => {
         e.preventDefault();
         // const issue = {title, description};
-        const response = await axios.post('http://localhost:3000/create/issue', {
+        const response = await axios.post('https://githubclonebackend.onrender.com/create/issue', {
               
              title: title,
              description: description,

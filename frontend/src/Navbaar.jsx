@@ -30,7 +30,7 @@ const Navbar = () => {
     const userId = localStorage.getItem("userId");
     const fetchUsername= async ()=>{
       try {
-        const response = await fetch(`http://localhost:3000/userProfile/${userId}`);
+        const response = await fetch(`https://githubclonebackend.onrender.com/userProfile/${userId}`);
         const data = await response.json();
         setUserName(data.username);
       } catch (error) {
@@ -42,7 +42,7 @@ const Navbar = () => {
     const fetchRepository= async ()=>{
       try {
         const response = await fetch(
-          `http://localhost:3000/repo/user/${userId}`
+          `https://githubclonebackend.onrender.com/repo/user/${userId}`
         );
         const data=await response.json();
         setRepositorie(data.repository);

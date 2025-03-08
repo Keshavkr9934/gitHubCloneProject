@@ -17,7 +17,7 @@ const SignUp = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/signup", {
+      const res = await axios.post("https://githubclonebackend.onrender.com/signup", {
         username: username,
         email: email,
         password: password,
