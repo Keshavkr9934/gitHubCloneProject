@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pbs{
+    position: relative;
+    right: -55%;
+}
+.repo-section{
+    /* margin-bottom: 30rem; */
+}
+@media (min-width: 632px) and (max-width: 767px) {
+    .cards{
+        width: 100%!important;
+    }
+    
+}
+

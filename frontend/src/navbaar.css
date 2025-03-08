@@ -1,0 +1,410 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0%;
+  padding: 0%;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden by default */
+  width: 250px;
+  height: 100%;
+  background-color: rgb(42, 45, 45);
+  color: white;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  border-radius: 0px 14px 0px 0px;
+}
+
+.sidebar.open {
+  left: 0; /* Visible when open */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 1rem 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Hamburger Icon Styling */
+.hameburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  height: 2rem; /* Adjust size */
+  width: 2rem; /* Adjust size */
+  background-color: rgb(33, 32, 32); /* Dark background */
+  border: 2px solid rgb(71, 69, 69); /* Border for styling */
+  border-radius: 5px; /* Rounded edges */
+  color: aliceblue; /* Icon color */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth hover effect */
+}
+
+/* Hover Effect */
+.hameburger:hover {
+  background-color: rgb(71, 69, 69); /* Lighter background on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Active Effect (on click) */
+.hameburger:active {
+  background-color: rgb(50, 50, 50); /* Even darker on click */
+  transform: scale(0.95); /* Shrink effect */
+}
+
+/* Icon Styling */
+.hameburger .ham {
+  font-size: 1rem; /* Adjust icon size */
+}
+.sidebar .x {
+  /* display: flex; */
+  position: relative;
+  right: -90%;
+  top: 3%;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.2s;
+  width: 4px;
+}
+
+.sidebar ul .x:hover {
+  /* height: 23px; */
+  /* width: 23px; */
+  /* justify-self: center; */
+  text-align: center;
+  color: rgb(255, 248, 248); /* Lighter background on hover */
+  transform: scale(1.9);
+}
+.sidebar i {
+  margin-right: 0.5rem;
+}
+.sidebar .repo {
+  position: relative;
+  top: 1rem;
+  margin-bottom: 1.3rem;
+  font-size: 89%;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.7);
+}
+.sidebar .repos {
+  position: relative;
+  left: 0.8rem;
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  left: 0;
+  height: 4rem;
+  border-bottom: 2px solid rgb(49, 48, 48);
+  background-color: rgb(42, 45, 45);
+  /* justify-items: center; */
+  align-items: center;
+  z-index: 1000;
+}
+.left-section {
+  flex-basis: 20%;
+  display: flex;
+  gap: 1rem;
+}
+.left-section img {
+  position: relative;
+  top: 4%;
+  width: 2rem;
+  height: 2rem;
+  margin: 1%;
+  cursor: pointer;
+}
+.hameburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  background-color: rgb(33, 32, 32);
+  border: 2px solid rgb(71, 69, 69);
+  border-radius: 5px;
+  color: aliceblue;
+}
+.left-section h1 {
+  text-align: center;
+  margin-top: 0.5rem;
+  color: aliceblue;
+}
+.hameburger ham {
+  display: flex;
+  flex-wrap: wrap;
+  /* color: aliceblue; */
+}
+.right-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: -53%;
+  gap: 2rem;
+}
+.right-section a {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  border: 2px solid rgb(66, 64, 64);
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  /* padding: 4px; */
+  background-color: rgb(33, 32, 32);
+  color: aliceblue;
+}
+.right-section a::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -33px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #3b3a3a;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.right-section a:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.right-section .user {
+  height: 2rem;
+  width: 2rem;
+  border: 2px solid rgb(66, 64, 64);
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  /* padding: 4px; */
+  background-color: rgb(33, 32, 32);
+  color: aliceblue;
+  cursor: pointer;
+}
+.right-section a:hover {
+  background-color: rgb(71, 69, 69);
+  transform: scale(1.1);
+}
+
+.userId {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Hidden by default */
+  width: 250px;
+  height: 100%;
+  background-color: rgb(42, 45, 45);
+  color: white;
+  padding: 1rem;
+  box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.7);
+  transition: right 0.3s ease-in-out;
+  border-radius: 15px 0 0 0;
+  z-index: 1000;
+}
+
+.userId.open {
+  right: 0;
+}
+
+.userId ul {
+  list-style: none;
+  padding: 0;
+}
+
+.userId li {
+  margin: 1rem 0;
+}
+
+.userId .y {
+  position: relative;
+  left: 90%;
+  top: 0;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.4s;
+}
+.userId .y:hover {
+  color: rgb(193, 195, 198);
+  transform: scale(1.9);
+}
+
+.userId a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.userId a:hover {
+  text-decoration: underline;
+}
+.userId .logout a{
+  position: relative;
+  right: -8.7rem;
+  top: 20rem;
+  border: 2px solid rgb(66, 64, 64);
+  border-radius: 4px;
+  padding: 0.5rem;
+  background-color: rgb(33, 32, 32);
+  color: aliceblue;
+  cursor: pointer;
+  text-decoration: none;
+
+}
+
+
+.userId .logout a:hover {
+  background-color: rgb(71, 69, 69);
+  transform: scale(1.1);
+}
+.userId .logout a:active {
+  background-color: rgb(50, 50, 50);
+  transform: scale(0.95);
+}
+@media only screen and (max-width: 1000px) {
+  .hameburger {
+    /* position: relative; */
+    height: 30px;
+    width: 70px;
+    margin-left: 0.5rem;
+  }
+  .left-section h1 {
+    font-size: 15px;
+    margin-top: 1.4rem;
+    margin-left: -0.1rem;
+  }
+  .left-section {
+    gap: 0.5rem;
+  }
+  .right-section {
+    right: -35%;
+  }
+  .left-section img{
+    margin: 0.1rem;
+    margin-bottom: 0.6rem;
+  }
+}
+.repo_name {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: white;
+  margin-left: 1rem;
+  margin-bottom: -0.9rem;
+}
+@media only screen and (max-width: 1380px) {
+  .right-section {
+    right: -40%;
+  }
+  .hameburger {
+    height: 30px;
+    width: 70px;
+    left: 1rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .right-section {
+    right: -25%;
+  }
+}
+@media only screen and (max-width: 719px) {
+  .right-section {
+    right: -15%;
+  }
+}
+@media only screen and (max-width: 631px) {
+  .right-section {
+    right: -7%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .right-section {
+    right: 0%;
+    gap: 0.3rem;
+  }
+}
+@media (min-width: 400px) and (max-width: 413px){
+  .right-section {
+    right: -20%;
+    gap: 0%;
+  }
+}
+@media (min-width: 413px) and (max-width: 434px){
+  .right-section {
+    right: -21%;
+    gap: 1%;
+  }
+}
+
+@media only screen and (max-width: 395px) {
+  .right-section {
+    right: 6%;
+  }
+}
+
+@media only screen and (max-width: 367px) {
+  .right-section {
+    right: 24%;
+    gap: 0.4rem;
+  }
+}
+@media (min-width: 200px) and (max-width: 362px) {
+  .right-section {
+    right: -15%;
+  }
+}
+@media (min-width: 200px) and (max-width: 393px) {
+  .right-section {
+    right: -12%;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 434px) {
+  .right-section {
+    right: 0%;
+    gap: 0.1rem;
+    margin-left: 0.7rem;
+  }
+  
+}
+@media only screen and (max-width: 360px) {
+  .right-section {
+    margin-left: 0.7rem;
+  }
+  .right-section a {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  
+}

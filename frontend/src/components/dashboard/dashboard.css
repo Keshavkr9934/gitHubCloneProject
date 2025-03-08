@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* body{
+    margin: 2rem;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+} */
+/* .dashboard{
+    display: flex;
+    top: 40%;
+    justify-content: space-between;
+    flex-direction: row;
+    color: azure;
+    margin: 10%;
+    padding: 4rem;
+}
+.search{
+    color: rgb(12, 20, 27);
+    /* border-radius: 34px; */
+/* } */
+/* .search input{
+    border: 2px solid black;
+    border-radius: 7px;
+} */ 

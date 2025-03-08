@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.repos {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 48%;
+  height: 100%;
+  top: 7rem;
+  color: white;
+  /* padding: 0 26% 0 26%; */
+  margin: 0 26% 0 26%;
+  z-index: 0;
+}
+.inputs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.inputs input {
+  display: flex;
+  border: 2px solid rgb(63, 166, 180);
+  border-radius: 0.5rem;
+}
+#leb1 {
+  transform: translate(3.1rem, -1.4rem);
+}
+#leb2 {
+  transform: translate(7.8rem, -1.4rem);
+}
+h1 {
+  font-size: 30px;
+  margin: 1rem 0 1rem 0;
+}
+.hra {
+  margin: 1.7rem 0 1.7rem 0;
+}
+.h3s {
+  font-size: 30px;
+}
+.btn {
+  display: flex;
+  width: 12rem;
+  height: 2rem;
+  background-color: green;
+  border: 2px solid rgb(85, 81, 81);
+  border-radius: 0.6rem;
+  /* flex-direction: row-reverse; */
+  position: relative;
+  right: -33rem;
+  justify-content: center;
+  align-items: center;
+}
+.btn:hover {
+  background-color: rgb(49, 137, 25);
+}
+#description {
+  border: 2px solid rgb(55, 147, 159);
+  border-radius: 0.5rem;
+}
+@media screen and (max-width: 1005px) {
+  .repos {
+    width: 80%;
+    margin: 0 9% 0 9%;
+  }
+  .btn {
+    right: -29rem;
+  }
+    
+}
+@media (min-width: 605px) and (max-width: 780px){
+    .btn{
+        right: -21rem;
+    }
+    .inputs{
+        display: flex;
+        flex-direction: row;
+        
+    }
+    #leb2{
+        margin-left: -7rem;
+    }
+    #leb1{
+        transform: translate(4rem, -1.5rem);
+    }
+}
+@media (min-width: 484px) and (max-width: 605px){
+    .btn{
+        right: -15rem;
+    }
+    .inputs{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    /* .input2{
+        margin-left: -7rem;
+    } */
+    #leb1{
+        transform: translate(0rem, 0rem);
+    }
+    #leb2{
+        transform: translate(0rem, 0rem);
+    }
+}
+@media (min-width: 250px) and (max-width: 484px){
+    .btn{
+       transition: right 0.5s;
+        right: -7rem;
+    }
+    .inputs{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    /* .input2{
+        margin-left: -7rem;
+    } */
+    #leb1{
+        transform: translate(0rem, 0rem);
+    }
+    #leb2{
+        transform: translate(0rem, 0rem);
+    }
+}
+@media (min-width: 0px) and (max-width: 250px){
+    .btn{
+        right: -4rem;
+    }
+    .inputs{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    /* .input2{
+        margin-left: -7rem;
+    } */
+    #leb1{
+        transform: translate(0rem, 0rem);
+    }
+    #leb2{
+        transform: translate(0rem, 0rem);
+    }
+}
