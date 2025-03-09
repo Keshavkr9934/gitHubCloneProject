@@ -4,7 +4,7 @@ import "./index.css";
 // import App from "./App.jsx";
 import { AuthProvider } from "./authContext.jsx";
 import ProjectRouter from "./Router.jsx";
-import { BrowserRouter, BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import SignUp from "./components/auth/SignUp.jsx";
 import Navbar from "./Navbaar.jsx";
 import NewRepo from "./components/repo/NewRepo.jsx";
